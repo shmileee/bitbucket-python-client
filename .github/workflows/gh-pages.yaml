@@ -19,6 +19,7 @@ jobs:
       - name: build
         run: |
           pip install mkdocs==1.1.2 mkdocs_material==4.1.1 mkdocstrings==0.13.4
+          pip install -r requirements.txt
           mkdocs build
       - name: deploy
         uses: peaceiris/actions-gh-pages@v2.5.0
