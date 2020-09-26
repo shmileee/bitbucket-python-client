@@ -1,0 +1,27 @@
+# mkdocs.yml
+site_name: Bitbucket Python Client - Documentation
+theme:
+  name: "material"
+nav:
+  - Usage: usage.md
+  - API Reference:
+      - api.py: reference/api.md
+  - LICENSE: license.md
+plugins:
+  - search
+  - mkdocstrings
+
+extra_css:
+  - css/mkdocstrings.css
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.emoji
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - toc:
+      permalink: "¤"

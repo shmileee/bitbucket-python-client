@@ -1,0 +1,16 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "bitbucket"
+author = "Oleksandr Ponomarov"
+author-email = "ponomarov.aleksandr@gmail.com"
+home-page = "https://github.com/shmileee/bitbucket-python-client"
+classifiers = ["License :: OSI Approved :: MIT License"]
+description-file = "README.md"
+requires = [
+    "requests==2.24.0",
+    "furl==2.1.0"
+]
+dist-name = "bitbucket-python-client"

@@ -26,10 +26,10 @@ class AuthenticationError(Exception):
 
 class BitbucketAuth(AuthBase):
     def __init__(self, token=None):
-        """
+        """Helper class to store authentication token.
 
         Args:
-            token (str, optional):
+            token (str, optional): Bitbucket personal token.
         """
 
         if token is not None:
@@ -56,10 +56,10 @@ def parse_url(url):
     """Parses a url into the base url and the query params
 
     Args:
-        url (str): url with query string, or not
+        url (str): url with query string, or not.
 
     Returns:
-        (str, `dict` of `lists`): url, query (dict of values)
+        (str, `dict` of `lists`): url, query (dict of values).
     """
     f = furl(url)
     query = f.args
@@ -71,12 +71,12 @@ def parse_url(url):
 
 
 class Bitbucket(object):
-    """Actual class for making API calls
+    """Actual class for making API calls.
 
     Args:
-        token(str, optional):
-        url(str, optional): Url of api
-        version(str, optional): Api version (1.0)
+        token (str, optional): Token used to authenticate.
+        url (str, optional): Ful URL to Bitbucket server API.
+        version (str, optional): API version (1.0).
     """
 
     def __init__(self, token=None, url=None, version="1.0"):
@@ -200,7 +200,7 @@ class Bitbucket(object):
         Token should be specified
 
         Args:
-            token (str, optional):
+            token (str, optional): Token used to authenticate.
 
         Returns:
 
@@ -219,15 +219,15 @@ class Bitbucket(object):
     def create_pullrequest(
         self, project, repository, source_branch, target_branch, title, description
     ):
-        """
+        """Creates Pull Request in specified repository.
 
         Args:
-            project:
-            repository:
-            source_branch:
-            target_branch:
-            description:
-            title:
+            project (str): Bitbucket project name (can be shortened).
+            repository (str): Repository name inside aforementioned project.
+            source_branch (str): Source branch.
+            target_branch (str): Target branch.
+            description (str): Description of your Pull Request.
+            title (str): Title of your Pull Request
 
         Returns:
 

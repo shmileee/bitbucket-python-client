@@ -1,0 +1,14 @@
+/build/
+/dist/
+/bitbucket/dist/
+__pycache__/
+/doc/_build/
+/htmlcov/
+/.coverage
+/.pytest_cache
+/.tox
+.idea/
+venv/
+*.pyc
+.python-version
+site/
