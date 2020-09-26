@@ -9,8 +9,6 @@ from requests.auth import AuthBase
 
 BITBUCKET_URL = os.getenv("BITBUCKET_URL")
 
-if BITBUCKET_URL is None:
-    raise EnvironmentError("BITBUCKET_URL is not set.")
 
 class TimeoutError(Exception):
     pass
@@ -75,16 +73,14 @@ class Bitbucket(object):
 
     Args:
         token (str, optional): Token used to authenticate.
-        url (str, optional): Ful URL to Bitbucket server API.
+        url (str, optional): Full URL to Bitbucket server API. If not specified, environment variable `BITBUCKET_URL` will be used.
         version (str, optional): API version (1.0).
     """
 
     def __init__(self, token=None, url=None, version="1.0"):
 
         self._version = version
-        self._url = "{0}/{1}".format(
-            url or BITBUCKET_URL, self.version
-        )
+        self._url = "{0}/{1}".format(url or BITBUCKET_URL, self.version)
         self._session = requests.Session()
         self._auth = None
         self._token = None

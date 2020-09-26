@@ -3,7 +3,7 @@ Install using `pip`:
 pip install bitbucket-python-client
 ```
 
-Set `BITBUCKET_URL`:
+Optionally set `BITBUCKET_URL`:
 ```bash
 export BITBUCKET_URL=https://bitbucket.company.tld
 ```
